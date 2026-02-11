@@ -1,6 +1,6 @@
 # Todo List API - DevOps CI/CD Pipeline
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/PedroCarreteiro/SPRING-CICD/pipeline.yml?style=for-the-badge)
+<!--![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/PedroCarreteiro/SPRING-CICD/pipeline.yml?style=for-the-badge)-->
 ![Docker Pulls](https://img.shields.io/docker/pulls/padraoo/todo-spring-app?style=for-the-badge)
 ![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3-green?style=for-the-badge&logo=springboot)
