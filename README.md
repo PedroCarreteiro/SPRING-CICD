@@ -1,7 +1,48 @@
-# SpringBoot application with Docker and CI/CD with GitHub Actions
+# Todo List API - DevOps CI/CD Pipeline
 
-Run locally: docker run -p 8080:8080 DOCKER_USER/todo-spring-app:latest
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/PedroCarreteiro/SPRING-CICD/pipeline.yml?style=for-the-badge)
+![Docker Pulls](https://img.shields.io/docker/pulls/padraoo/todo-spring-app?style=for-the-badge)
+![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3-green?style=for-the-badge&logo=springboot)
 
-Get: curl http://localhost:8080/tasks
+Simple API REST with **Spring Boot** and **Docker**
 
-[![DevOps Java Pipeline](https://github.com/PedroCarreteiro/SPRING-CICD/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/PedroCarreteiro/SPRING-CICD/actions/workflows/pipeline.yaml)
+**CI/CD** pipeline by **GitHub Actions**
+
+## DevOps Cycle
+
+```mermaid
+graph LR
+    A[Developer] -->|Push Code| B(GitHub Repo)
+    B -->|Trigger| C{GitHub Actions}
+    C -->|Test & Build| D[JUnit 5 + Maven]
+    D -- Ok? --> E[Build Docker Image]
+    E -->|Push| F[Docker Hub Registry]
+    F -->|Pull| G[Server / Localhost]
+
+```
+## Run project 
+### With Docker
+```bash
+docker run -p 8080:8080 -d USER/todo-app
+```
+
+### Locallly for dev
+```bash
+git clone [https://github.com/PedroCarreteiro/SPRING-CICD.git](https://github.com/PedroCarreteiro/SPRING-CICD.git)
+cd SPRING-CD
+./mvnw spring-boot:run
+```
+
+## Endpoints
+- GET: /tasks
+- POST: /tasks
+- DELETE: /tasks/{id}
+
+## General payload
+```json
+{
+  "description": "Description",
+  "completed": false
+}
+```
