@@ -24,7 +24,7 @@ graph LR
 ## Run project 
 ### With Docker
 ```bash
-docker run -p 8080:8080 -d USER/todo-app
+docker run -p 8080:8080 -d padraoo/todo-app
 ```
 
 ### Locallly for dev
