@@ -27,7 +27,7 @@ graph LR
 docker run -p 8080:8080 padraoo/todo-spring-app:latest
 ```
 
-### Locallly for dev
+### Locally for dev
 ```bash
 git clone [https://github.com/PedroCarreteiro/SPRING-CICD.git](https://github.com/PedroCarreteiro/SPRING-CICD.git)
 cd SPRING-CD
