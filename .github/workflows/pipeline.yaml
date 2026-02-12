@@ -22,18 +22,18 @@ jobs:
           cache: maven # Cacheia as dependências
 
       - name: Rodar Testes Unitários
-        run: mvn test # Se falhar aqui, a pipeline para
+        run: mvn test # Se falhar aqui a pipeline para
 
   #Criar Imagem Docker e Enviar
   docker-push:
-    needs: test-and-build # Só roda se o job anterior passar
+    needs: test-and-build # So roda se o job anterior passar
     runs-on: ubuntu-latest
 
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
 
-      #Engine de recursos avançados
+      #Engine de recursos avancados
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -51,7 +51,7 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/todo-spring-app:latest
             ${{ secrets.DOCKER_USERNAME }}/todo-spring-app:${{ github.sha }}
-            
+
           #Usa o cache interno do GitHub Actions
           cache-from: type=gha
           cache-to: type=gha,mode=max
