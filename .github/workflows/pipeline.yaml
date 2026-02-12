@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  #Testar e Compilar
+  #Testar e compilar
   test-and-build:
     runs-on: ubuntu-latest
 
@@ -24,7 +24,7 @@ jobs:
       - name: Rodar Testes Unitários
         run: mvn test # Se falhar aqui a pipeline para
 
-  #Criar Imagem Docker e Enviar
+  #Criar imagem Docker e enviar
   docker-push:
     needs: test-and-build # So roda se o job anterior passar
     runs-on: ubuntu-latest
