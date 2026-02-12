@@ -33,6 +33,10 @@ jobs:
       - name: Baixar o código
         uses: actions/checkout@v4
 
+      #Engine de recursos avançados
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Login no Docker Hub
         uses: docker/login-action@v3
         with:
@@ -44,4 +48,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/todo-spring-app:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/todo-spring-app:latest
+            ${{ secrets.DOCKER_USERNAME }}/todo-spring-app:${{ github.sha }}
+            
+          #Usa o cache interno do GitHub Actions
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
