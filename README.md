@@ -29,6 +29,10 @@ docker pull padraoo/todo-spring-app:latest
 ```bash
 docker run -p 8080:8080 padraoo/todo-spring-app:latest
 ```
+or
+```bash
+docker run --pull always -p 8080:8080 padraoo/todo-spring-app:latest
+```
 
 ### Locally for dev
 ```bash
