@@ -24,6 +24,9 @@ graph LR
 ## Run project 
 ### With Docker
 ```bash
+docker pull padraoo/todo-spring-app:latest
+```
+```bash
 docker run -p 8080:8080 padraoo/todo-spring-app:latest
 ```
 
